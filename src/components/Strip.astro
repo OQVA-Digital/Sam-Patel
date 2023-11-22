@@ -1,0 +1,29 @@
+---
+    import '../styles/strip.css'
+
+    import {TEL, TEL_HREF, TEL_INTERNATIONAL, EMAIL} from '../consts'
+
+    import LinkedIn from '../components/svg/LinkedIn.astro'
+    import Facebook from '../components/svg/Facebook.astro'
+---
+
+<div class="strip">
+    <div class="base_width">
+        <div class="flex text">
+            <a href=`mailto:${EMAIL}` class="flex icons" title="call us" aria-label=`E-mail us at ${EMAIL}`>
+                <span>{EMAIL}</span>
+            </a>
+            
+            <a href=`tel:${TEL_HREF}` class="flex mobile_hidden" title="call us" aria-label=`Call us at ${TEL_INTERNATIONAL}`>
+                <span>{TEL}</span>
+            </a>
+        </div>
+
+        <div class="flex">
+
+            <a href="https://www.facebook.com/SamitPtl" class="icon" target="_blank" title="Find me on Facebook" aria-label="Find me on Facebook"><Facebook/></a>
+            
+            <a href="https://www.linkedin.com/in/samitptl/" target="_blank" class="icon" title="Find us on LinkedIn" aria-label="Find me on LinkedIn"><LinkedIn/></a>
+        </div>
+    </div>
+</div>

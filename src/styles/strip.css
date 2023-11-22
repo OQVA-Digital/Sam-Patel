@@ -1,0 +1,68 @@
+.strip {
+    width: 100%;
+    background-color: var(--dark);
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    color: var(--light-a);
+}
+
+.strip>.base_width {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.strip .icon {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.strip .bg.icon.tel {
+    margin-right: 1rem;
+}
+
+.strip .bg.icon:hover,
+.strip a:hover .icon {
+    background-color: var(--c2);
+    transition: background-color 0s ease;
+}
+
+.strip a,
+.strip a .icon {
+    min-width: 3rem;
+    /* height: 2rem; */
+}
+
+.strip a span {
+    font-weight: 300;
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    letter-spacing: 0.1rem;
+    line-height: 1;
+}
+
+.strip .flex.text {
+    gap:4rem;
+}
+
+.strip .flex {
+    align-items: center;
+    height: 100%;
+}
+
+.strip a svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.strip .flex hr {
+    /* width: 0.2rem; */
+    height: 100%;
+    background-color: var(--c2-b);
+    border: unset;
+    border-left: 0.1rem solid var(--c2);
+}

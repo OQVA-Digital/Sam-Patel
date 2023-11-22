@@ -1,0 +1,66 @@
+---
+
+import '../styles/header.css'
+
+---
+
+<header>
+    <div class="base_width">
+        <a href="/" class="logo">
+            Samit Patel
+        </a>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/#features">Events</a>
+            <a href="/#plans">Blog</a>
+            <a href="/contact/">Resume</a>
+        
+            <a href="/contact/" class="cta">Get in touch</a>
+        </nav>
+
+        <button class="hambt" type="button" aria-label="Open navigation menu">
+            <div class="ctnr">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+    </div>
+</header>
+
+<script>
+    const menuBt = document.querySelector(".hambt");
+    const nav = document.querySelector("header nav");
+    const navBts = document.querySelectorAll("header nav a");
+
+    let showingMenu = false;
+
+    function toggleNav() {
+        if (showingMenu == false) {
+            nav.classList.add("show");
+            menuBt.classList.add("close");
+
+            showingMenu = true;
+        } else {
+            nav.classList.remove("show");
+            menuBt.classList.remove("close");
+
+            showingMenu = false;
+        }
+    }
+
+    if(window.getComputedStyle(menuBt).display != "none") {
+        menuBt.addEventListener("click", toggleNav);
+
+        for (let i = 0; i < navBts.length; i++) {
+            navBts[i].addEventListener("click", toggleNav);
+        }
+
+        window.addEventListener("scroll", function (e) {
+            if (showingMenu == true) {
+                toggleNav();
+            }
+        });
+    }
+</script>

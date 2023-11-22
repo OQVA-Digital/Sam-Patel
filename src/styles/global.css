@@ -1,0 +1,280 @@
+html.sr .reveal, html.sr .reveal_steps1,  html.sr .reveal_steps2 {
+    visibility: hidden;
+}
+
+:root {
+    --light:#fff;
+    --light-a:#e3e8ff;
+    --light-b:#f3f6ff;
+
+    --dark:#222222;
+    --dark-a:#123925;
+
+    --primary:#334ff5;
+
+    --highlight:#f53347;
+
+    --grey:#444444;
+
+    --c1: #9bba3c;
+    --c1-a:#b4dd36;
+
+    --c2:#ece634;
+
+    --c3:#4157aa;
+    --c3-a:#5472e4;
+
+    --c4:#007940;
+
+    --max-width: 135rem;
+
+    --width-1:clamp(15rem, 81vw, var(--max-width));
+    --width-2:clamp(15rem, 88vw, var(--max-width));
+
+    --corner-width: calc((100vw - var(--width-1)) / 2);
+
+    --header-height:clamp(1rem,17vmin,8rem);
+
+    --roulette-size:clamp(25rem, 25vw, 30rem);
+
+    --testimonial-width:clamp(15rem, 75vw, 100rem);
+}
+
+.base_width {
+    width: var(--width-1);
+    margin-inline: auto;
+}
+
+@font-face {
+    font-family: 'LexendDeca';
+    src: url('/fonts/LexendDeca-VariableFont_wght.ttf');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'LexendDeca', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    position: relative;
+}
+
+html,
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    cursor: default;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    width: fit-content;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    color: unset;
+    cursor: pointer;
+}
+
+a h1, a h2, a h3, a h4, a h5, h5 {
+    cursor: pointer;
+}
+
+img {
+    user-select: none;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    object-position: center;
+}
+
+video {
+    background-size: cover;
+    background-position: center;
+}
+
+::selection {
+    color: var(--dark);
+    background-color: #ddd;
+}
+
+::-webkit-scrollbar {
+    width: 2.2rem;
+    height: 2rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--light);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border:0.6rem solid var(--light);
+}
+
+button {
+    background-color: transparent;
+    outline-color: transparent;
+    border: unset;
+    padding: unset;
+    font-family: inherit;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+}
+
+button:focus-visible {
+    outline: 0.1rem solid transparent;
+}
+
+button:not([type="submit"]):focus-visible {
+    outline: 0.1rem solid transparent;
+}
+
+.flex {
+    display: flex;
+}
+
+.mobile_hidden {
+    display: none;
+}
+
+.flex.column {
+    flex-direction: column;
+}
+
+.flex.center {
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+ol, ul, li {
+    padding: 0;
+    list-style: none;
+    margin-block: 0;
+}
+
+hr {
+    border:unset;
+    margin: unset;
+}
+
+noscript {
+    font-size: 2rem;
+    text-align: center;
+    display: block;
+    position: absolute;
+    background-color: var(--light);
+    z-index: 10;
+    color: var(--dark-a);
+    margin-inline: auto;
+    padding: 1rem;
+    border: 0.2rem solid var(--highlight);
+    max-width: 80%;
+    box-sizing: border-box;
+    inset: 0;
+    height: fit-content;
+    margin: auto;
+}
+
+.cta {
+    font-size: clamp(1.5rem, 3.8vw, 1.6rem);
+    text-align: center;
+    width: fit-content;
+    padding: clamp(0.7rem, 3vw, 1.4rem) clamp(1.6rem, 9vw, 4.5rem) clamp(0.7rem, 3vw, 1.4rem) clamp(1.6rem, 5vw, 3.6rem);
+    line-height: 1;
+    position: relative;
+}
+
+.cta span {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--highlight);
+    position: absolute;
+}
+
+.cta span:nth-of-type(1) {
+    left: -0.25rem;
+    top: -0.25rem;
+}
+
+.cta span:nth-of-type(2) {
+    right: -0.25rem;
+    top: -0.25rem;
+}
+
+.cta span:nth-of-type(3) {
+    right: -0.25rem;
+    bottom: -0.25rem;
+}
+
+.cta span:nth-of-type(4) {
+    left: -0.25rem;
+    bottom: -0.25rem;
+}
+
+.main.cta {
+
+}
+
+
+@media screen and (min-width:800px) {
+    .mobile_hidden {
+        display: inherit;
+    }
+}
+
+@media (min-width:1920px) {
+    html {
+        font-size: 11px;
+    }
+}
+
+@media (min-width:2440px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (min-width:3000px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (min-width:4000px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width:5000px) {
+    html {
+        font-size: 19px;
+    }
+}
+
+
