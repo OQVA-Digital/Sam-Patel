@@ -1,0 +1,95 @@
+form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 2vw, 2rem);
+    font-size: 1.45rem;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+form p {
+    flex: 1;
+    min-width: clamp(10rem, 62vw, 18rem);
+}
+
+form > .flex {
+    justify-content: space-between;
+    gap: clamp(1.5rem, 2vw, 2rem);
+    flex-flow: row wrap;
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    font-weight: 600;
+    line-height: 1.4;
+    font-size: 1.8rem;
+    color:var(--dark)
+}
+
+form input,
+form textarea,
+form select {
+    padding: clamp(0.8rem, 2vw, 1.2rem) clamp(0.8rem, 2vw, 1.5rem);
+    border: unset;
+    background-color: var(--light);
+    font-size: 0.85em;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    font-family: 'LexendDeca', sans-serif;
+    font-weight: 400;
+    color: var(--dark-a);
+}
+
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline-color: var(--primary);
+    outline-width: 0.3rem;
+}
+
+textarea {
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+    min-height: 13rem;
+    height: 13rem;
+    max-height: 25rem;
+}
+
+form button[type='submit'] {
+    display: block;
+    margin: 0 auto;
+    font-size: 2.2rem;
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 1.3rem 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    border: 0.2rem solid var(--c2-b);
+    border-bottom-width: 0.7rem;
+    position: relative;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    line-height: 1;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 25rem;
+    font-family: 'LexendDeca';
+}
+
+form button[type='submit'].disabled {
+    background-color: var(--c2-e);
+    font-weight: 500;
+    pointer-events: none;
+}
+
+body form button[type='submit'].submitted {
+    background-color: var(--c1);
+    color: var(--light);
+    font-weight: 600;
+    pointer-events: none;
+    border-color: var(--dark);
+}

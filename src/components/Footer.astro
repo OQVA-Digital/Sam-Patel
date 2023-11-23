@@ -8,47 +8,48 @@
 // import { Image } from "astro:assets"
 // import Logo from '../assets/logo/logo.png'
 
+import { RESUME_URL, EMAIL, TEL_HREF, TEL } from "../consts";
+
+import Facebook from "./svg/Facebook.astro";
+import LinkedIn from "./svg/LinkedIn.astro";
+
 ---
 
 <footer>
     <div class="base_width">
         <div class="content">
-            <a href="/" class="logo">
-                <!-- <Image src={Logo} alt="freshOps Logo" draggable="false"/> -->
-            </a>
+            <p class="logo">
+                Samit Patel
+            </p>
             
-            <p>Simplify operations. Amplify results. Scale your commercial cleaning business.</p>
+            <p>An outright positive, trusted, and accomplished management professional with 18+ years global cross-sector experience.</p>
         </div>
 
         <nav>
             <a href="/"><span></span>Home</a>
-            <a href="/#plans"><span></span>Pricing</a>
-            <a href="/#features"><span></span>Features</a>
+            <a href="/events/"><span></span>Events</a>
+            <a href="/blog/"><span></span>Blog</a>
+            <a href={RESUME_URL}><span></span>Resume</a>
             <a href="/contact/"><span></span>Contact</a>
-            <a href="https://www.getfreshops.com/privacy-policy/" target="_blank"><span></span>Privacy Policy</a>
-            <a href="/terms-of-service/"><span></span>Terms of Service</a>
         </nav>
 
         <div>
             <div class="nap_data">
-                <a href="mailto:help@freshops.uk">help@freshops.uk</a>
-                <a href="tel:+4420XXXXXXXX">+44 20 XXXX XXXX</a>
+                <a href={EMAIL}>{EMAIL}</a>
+                <a href={TEL_HREF}>{TEL}</a>
                 <p>London, UK</p>
                 <p>United Kingdom</p>
-                <p></p>
             </div>
 
             <hr>
             
             <div class="social">
-                <a href="#" class="instagram icon" aria-label="Instagram link">
-                    <!-- <Instagram/> -->
-                </a>
                 <a href="#" class="twitter icon" aria-label="Twitter link">
-                    <!-- <Twitter/> -->
+                    <Facebook/>
                 </a>
+
                 <a href="#" class="linkedin icon" aria-label="LinkedIn link">
-                    <!-- <LinkedIn/> -->
+                    <LinkedIn/>
                 </a>
             </div>
         </div>
@@ -57,9 +58,9 @@
 
 <style>
     footer {
-        background-color: var(--dark);
+        background-color: var(--primary);
         color: var(--light);
-        padding: clamp(4rem,19vw,12rem) 0;
+        padding: clamp(4rem,19vw,8rem) 0;
         font-size: clamp(1rem,3.9vmin,1.7rem);
         line-height: 1.5;
         position: relative;
@@ -68,30 +69,31 @@
     footer > .base_width {
         display: flex;
         flex-flow: row wrap;
-        gap: clamp(3rem,10vw,18rem);
+        gap: clamp(3rem,4vw,18rem);
     }
 
     footer .content {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1rem;
         flex: 1;
+        min-width: clamp(10rem, 50vw, 30rem);
     }
 
-    footer .logo {
-        width: clamp(10rem, 50vw, 30rem);
-        display: block;
-    }
-
-    footer .logo img {
-        object-fit: contain;
+    footer .content .logo {
+        font-size: 2.8rem;
+        font-weight: 630;
+        position: relative;
+        display: flex;
+        align-items: center;
     }
 
     footer .content p {
-        max-width: 38rem;
+        max-width: 62rem;
         font-weight: 300;
         letter-spacing: 0.1rem;
         letter-spacing: 0.05rem;
+        font-size: 1.8rem;
     }
 
     footer .legal {
@@ -117,18 +119,15 @@
 
     footer nav a span {
         display: block;
-        border-bottom: 0.35rem solid var(--grey);
-        border-right: 0.35rem solid var(--grey);
-        border-top: 0.35rem solid transparent;
-        border-left: 0.35rem solid transparent;
-        transform: rotate(-45deg);
-        transition: border 0.4s ease;
+        width: 0.6rem;
+        height: 0.6rem;
+        transition: background-color 0.4s ease;
+        background-color: var(--light);
     }
 
     footer nav a:hover span {
-        border-bottom: 0.5rem solid var(--c1);
-        border-right: 0.5rem solid var(--c1);
-        transition: border 0s ease;
+        transition: background-color 0s ease;
+        background-color: var(--highlight);
     }
 
     .nap_data {
@@ -181,8 +180,8 @@
             flex-direction: column;
         }
 
-        footer .content {
-            max-width: 40vw;
+        footer > .base_width {
+            gap: clamp(3rem,10vw,18rem);
         }
 
         footer .legal {

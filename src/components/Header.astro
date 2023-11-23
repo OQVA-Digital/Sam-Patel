@@ -2,6 +2,8 @@
 
 import '../styles/header.css'
 
+import { RESUME_URL } from "../consts";
+
 ---
 
 <header>
@@ -12,10 +14,9 @@ import '../styles/header.css'
 
         <nav>
             <a href="/">Home</a>
-            <a href="/#features">Events</a>
-            <a href="/#plans">Blog</a>
-            <a href="/contact/">Resume</a>
-        
+            <a href="/events/">Events</a>
+            <a href="/blog/">Blog</a>
+            <a href={RESUME_URL} target="_blank">Resume</a>
             <a href="/contact/" class="cta">Get in touch</a>
         </nav>
 

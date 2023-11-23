@@ -75,6 +75,7 @@ header .cta {
     font-size: inherit;
     padding-block: 2rem 5rem;
     padding-inline: unset;
+    display: flex;
 }
 
 header .cta::after {

@@ -1,0 +1,72 @@
+---
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+import BackBt from '../../components/BackBt.astro';
+
+import Layout from '../../layouts/Layout.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) =>  b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+import "../../styles/blog/blog.css"
+import "../../styles/blog/blog-home.css"
+import "../../styles/blog/blog-collection.css"
+
+import { Schema } from "astro-seo-schema"
+---
+
+<Layout title="Blog | Samit Patel">
+	<BackBt url={`/`} label="Return Home"/>
+
+	<main>
+		<section class="scroll_margin_top base_width" id="posts">
+
+			<h1><sub>Sam's</sub>Blog</h1>
+
+			<ul class="posts">
+				{
+					posts.slice(0, 13).map((post) => (
+						<>
+						{post.data.category == "cleaning" ? (
+							<li id={(post.data.title).toLowerCase().replace(/\s+/g, '-')} class="scroll_margin_top">
+								<div class="ctnr reveal">
+									<a class="hero" href={`/blog/${post.slug}/`}>
+										<img src={post.data.heroImage} alt={post.data.description} loading="lazy"/>
+									</a>
+
+									<div class="content">
+										<div class="ctnr">
+											<FormattedDate date={post.data.pubDate} />
+		
+											<a href={`/blog/${post.slug}/`}>
+												<h3 class="title">{post.data.title}</h3>
+											</a>
+
+											{post.data.description ? (
+												<p class="description">{post.data.description}</p>
+											) : null}
+
+											<a href={`/blog/${post.slug}/`} class="read_more">Read more</a>
+										</div>
+									</div>
+								</div>
+							</li>
+						) : null}
+						</>
+					))
+				}
+			</ul>
+		</section>
+	</main>
+
+    <Schema
+        item={{
+			"@context": "https://schema.org",
+			"@type": "Blog",
+			"@id": "sam-patel-blog",
+			"description": "Samit Patel, London's trusted partner in professional commercial and office cleaning. Reliable, high standards, tailored to your needs. See why 95% of our clients stay.",
+			"name": "Samit Patel Blog"
+		  }}
+    />
+</Layout>

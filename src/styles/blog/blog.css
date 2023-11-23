@@ -1,0 +1,18 @@
+:root {
+    --article-width: clamp(9rem, 89vw, 68rem);
+}
+
+.article_width {
+    width: var(--article-width);
+    margin-inline: auto;
+}
+
+time {
+    font-size: clamp(1.2rem, 3vw, 1.3rem);
+    color: var(--primary-d);
+    font-weight: 500;
+}
+
+main {
+    margin-block: clamp(4rem, 6vw, 6rem);
+}
