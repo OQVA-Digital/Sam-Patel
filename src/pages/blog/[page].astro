@@ -10,10 +10,9 @@ export async function getStaticPaths({ paginate }) {
 	const posts = (await getCollection('blog')).sort(
 		(a, b) =>  b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 	);
-  return paginate(posts, { pageSize: 6 })
-}
 
-const { page } = Astro.props;
+  	return paginate(posts, { pageSize: 6 })
+}
 
 interface Props {
   page?: {
@@ -26,6 +25,8 @@ interface Props {
     currentPage?: number;
   };
 }
+
+const { page } = Astro.props;
 
 import BackBt from '../../components/BackBt.astro';
 
