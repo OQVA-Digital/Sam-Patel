@@ -5,12 +5,12 @@ form {
     gap: clamp(1.5rem, 2vw, 2rem);
     font-size: 1.45rem;
     justify-content: space-evenly;
-    width: 100%;
+    max-width: clamp(1rem, var(--width-1), 50rem);
 }
 
 form p {
     flex: 1;
-    min-width: clamp(10rem, 62vw, 18rem);
+    min-width: clamp(10rem, 33vw, 18rem);
 }
 
 form > .flex {

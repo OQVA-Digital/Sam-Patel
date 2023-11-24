@@ -22,20 +22,21 @@ section.intro:after {
     margin-inline: auto 0;
     display: flex;
     flex-flow: column;
-    gap: clamp(1rem, 3vw, 5rem);
+    gap: clamp(1rem, 4vw, 7rem);
 }
 
 .intro .sam_patel {
     width: clamp(10rem, 70vw, 40rem);
 }
 
-h1 {
-    font-size: clamp(1rem, 5.1vw, 3.2rem);
+.intro h1 {
+    font-size: clamp(1rem, 5.1vw, 3.6rem);
     font-weight: 800;
     line-height: 1.4;
+    max-width: 56rem;
 }
 
-h1 span {
+.intro h1 span {
     font-size: 2em;
     line-height: 1.1;
     display: inline-block;
@@ -47,22 +48,57 @@ h1 span {
     display: flex;
     flex-direction: column;
     gap: clamp(1rem, 4vw, 2.5rem);
-    padding-block: 4rem;
+    padding-block: 4rem 2rem;
 }
 
 .intro h2 {
     font-weight: 450;
     font-size: clamp(1rem, 4.5vw, 2.2rem);
     max-width: 90%;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .intro h2 span {
-    color:var(--highlight)
+    color:var(--highlight);
+    font-weight: 500;
 }
 
 .intro .cta_ctnr {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: clamp(1.3rem, 4vw, 2rem);
+}
 
+.intro .cta_ctnr .social {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    color: var(--primary-l1);
+}
+
+.intro .cta_ctnr .social a {
+    display: flex;
+    align-items: center;
+}
+
+.intro .cta_ctnr svg {
+    width: clamp(1.8rem, 3vw, 2rem);
+    height: clamp(1.8rem, 3vw, 2rem);
+    transition: color 0.4s ease;
+    -webkit-transition: color 0.4s ease;
+    -moz-transition: color 0.4s ease;
+    -ms-transition: color 0.4s ease;
+    -o-transition: color 0.4s ease;
+}
+
+.intro .social a:hover svg {
+    color: var(--primary);
+    transition: color 0.1s ease;
+    -webkit-transition: color 0.1s ease;
+    -moz-transition: color 0.1s ease;
+    -ms-transition: color 0.1s ease;
+    -o-transition: color 0.1s ease;
 }
 
 .intro .cta {
@@ -132,7 +168,7 @@ section.events {
 .events .card {
     background-color: var(--primary);
     color: var(--light);
-    padding: 2rem;
+    padding: 2rem 2rem 4rem;
     box-sizing: border-box;
     max-width: var(--width-1);
     position: relative;
@@ -157,6 +193,7 @@ section.events {
     bottom: 1rem;
     font-weight: 600;
     letter-spacing: 0.1rem;
+    font-size: 1rem;
 }
 
 .events .card.upcoming::after {
@@ -181,14 +218,45 @@ section.events {
 }
 
 .events > a {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 650;
     color: var(--primary);
-    margin-block: 3rem;
+    margin-block: 4rem;
     text-decoration: underline;
     text-underline-offset: 0.6rem;
     text-decoration-color: var(--light);
     text-decoration-thickness: 0.3rem;
+    transition: color 0.3s ease;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    -ms-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+}
+
+.events > a:hover {
+    color:var(--dark);
+    transition: color 0.1s ease;
+    -webkit-transition: color 0.1s ease;
+    -moz-transition: color 0.1s ease;
+    -ms-transition: color 0.1s ease;
+    -o-transition: color 0.1s ease;
+}
+
+.events .card .learn_more {
+    position: absolute;
+    bottom: -0.9rem;
+    right: 0;
+    padding: 1rem 2rem 1rem 0;
+    font-size: clamp(1.5rem, 4vw, 1.6rem);
+    font-weight: 500;
+    border-bottom: 1rem solid var(--highlight);
+    text-align: center;
+    width: fit-content;
+    transition: color 0.3s ease;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    -ms-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
 }
 
 section.quote {
@@ -225,6 +293,29 @@ section.quote .squares {
     position: absolute;
     inset: 0;
     z-index: -1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transition: transform 0.06s 0.1s ease;
+    -webkit-transition: transform 0.06s 0.1s ease;
+    -moz-transition: transform 0.06s 0.1s ease;
+    -ms-transition: transform 0.06s 0.1s ease;
+    -o-transition: transform 0.06s 0.1s ease;
+}
+
+section.quote:hover .squares {
+    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+    transition: transform 0.06s ease;
+    -webkit-transition: transform 0.06s ease;
+    -moz-transition: transform 0.06s ease;
+    -ms-transition: transform 0.06s ease;
+    -o-transition: transform 0.06s ease;
 }
 
 section.quote .squares span {
@@ -388,21 +479,28 @@ section.text .cta {
         align-items: center;
     }
 
-    h1 {
-        line-height: 1.2;
-        font-size: clamp(1rem, 2.6vw, 4.7rem);
+    .intro .cta_ctnr .social {
+        flex-direction: row;
     }
 
-    h1 span {
-        font-size: 1.4em;
+    .intro h1 {
+        font-size: clamp(1rem, 2.3vw, 3.8rem);
+    }
+
+    .intro .base_width .content {
+        gap: clamp(1rem, 1vw, 2.5rem);
+    }
+
+    .intro h1 span {
+        line-height: 1.05;
     }
 
     .intro h2 {
-        font-size: clamp(1rem, 1.8vw, 2.2rem);
+        font-size: clamp(1.6rem, 1.4vw, 2.2rem);
     }
 
     .intro .sam_patel {
-        width: clamp(10rem, 25vw, 70rem);
+        width: clamp(10rem, 27vw, 70rem);
         margin-top: 7rem;
     }
 

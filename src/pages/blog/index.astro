@@ -22,37 +22,35 @@ import { Schema } from "astro-seo-schema"
 	<main>
 		<section class="scroll_margin_top base_width" id="posts">
 
-			<h1><sub>Sam's</sub>Blog</h1>
+			<h1 class="reveal"><sub>Sam's</sub>Blog</h1>
 
 			<ul class="posts">
 				{
 					posts.slice(0, 13).map((post) => (
 						<>
-						{post.data.category == "cleaning" ? (
-							<li id={(post.data.title).toLowerCase().replace(/\s+/g, '-')} class="scroll_margin_top">
-								<div class="ctnr reveal">
-									<a class="hero" href={`/blog/${post.slug}/`}>
-										<img src={post.data.heroImage} alt={post.data.description} loading="lazy"/>
-									</a>
+						<li id={(post.data.title).toLowerCase().replace(/\s+/g, '-')} class="scroll_margin_top">
+							<div class="ctnr reveal">
+								<a class="hero" href={`/blog/${post.slug}/`}>
+									<img src={post.data.heroImage} alt={post.data.description} loading="lazy"/>
+								</a>
 
-									<div class="content">
-										<div class="ctnr">
-											<FormattedDate date={post.data.pubDate} />
-		
-											<a href={`/blog/${post.slug}/`}>
-												<h3 class="title">{post.data.title}</h3>
-											</a>
+								<div class="content">
+									<div class="ctnr">
+										<FormattedDate date={post.data.pubDate} />
+	
+										<a href={`/blog/${post.slug}/`}>
+											<h3 class="title">{post.data.title}</h3>
+										</a>
 
-											{post.data.description ? (
-												<p class="description">{post.data.description}</p>
-											) : null}
+										{post.data.description ? (
+											<p class="description">{post.data.description}</p>
+										) : null}
 
-											<a href={`/blog/${post.slug}/`} class="read_more">Read more</a>
-										</div>
+										<a href={`/blog/${post.slug}/`} class="read_more">Read more</a>
 									</div>
 								</div>
-							</li>
-						) : null}
+							</div>
+						</li>
 						</>
 					))
 				}

@@ -12,24 +12,38 @@ import LinkedIn from '../components/svg/LinkedIn.astro'
 import Facebook from '../components/svg/Facebook.astro'
 
 import { RESUME_URL, FACEBOOK_URL, LINKEDIN_URL } from "../consts";
+
+import { getCollection } from 'astro:content';
+
+const events = (await getCollection('events')).sort(
+	(a, b) =>  a.data.eventDate.valueOf() - b.data.eventDate.valueOf()
+);
+
+import FormattedDate from '../components/FormattedDate.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Samit Patel">
 	<main>
 		<section class="intro">
 			<div class="base_width">
 				<div class="content">
-					<h1>Welcome to Sam's World of <span>Disruption and Success</span></h1>
+					<h1 class="reveal">Welcome to Sam's World of <span class="reveal">Disruption and Success</span></h1>
 
-					<h2>An outright positive, trusted, and accomplished management professional with 18+ years <span>global cross-sector experience.</span></h2>
+					<h2 class="reveal">An outright positive, trusted, and accomplished management professional with 18+ years <span>global cross-sector experience.</span></h2>
 
-					<div class="cta_ctnr">
-						<a class="cta">Disrupt Your Game: <b>Connect With Sam</b>
+					<div class="cta_ctnr reveal">
+						<a href="/contact/" class="cta">Disrupt Your Game: <b>Connect With Sam</b>
 							<span></span>
 							<span></span>
 							<span></span>
 							<span></span>
 						</a>
+
+						<div class="social">
+							<a href={FACEBOOK_URL} class="icon" target="_blank" title="Find me on Facebook" aria-label="Find me on Facebook"><Facebook/></a>
+							
+							<a href={LINKEDIN_URL} target="_blank" class="icon" title="Find me on LinkedIn" aria-label="Find me on LinkedIn"><LinkedIn/></a>
+						</div>
 					</div>
 				</div>
 
@@ -38,7 +52,7 @@ import { RESUME_URL, FACEBOOK_URL, LINKEDIN_URL } from "../consts";
 		</section>
 
 		<div class="flex_sections">
-			<section class="about_me">
+			<section class="about_me reveal">
 				<h2>Who am I?</h2>
 
 				<p><b>I'm not your typical suit-and-tie executive.</b> I provoke, disrupt, and thrive on pushing people beyond their "appropriate" selves. Just like Jamie Catto beautifully put it, I dance with masks until they slip, revealing the true, illuminating fun within.</p>
@@ -46,10 +60,10 @@ import { RESUME_URL, FACEBOOK_URL, LINKEDIN_URL } from "../consts";
 				<p>Gone are the days of buzzwords and flashy titles. My superpower? Making you unlearn, challenging the status quo, and having a blast while doing it. <span class="color">From nurturing new ideas to fostering partnerships and cultures, I'm here to shake things up.</span></p>
 			</section>
 
-			<section class="events">
+			<section class="events reveal">
 				<h2>Events I'm attending</h2>
 
-				<div class="content">
+				<!-- <div class="content">
 					<div class="card upcoming">
 						<p class="date">12/05/2024</p>
 	
@@ -65,21 +79,45 @@ import { RESUME_URL, FACEBOOK_URL, LINKEDIN_URL } from "../consts";
 	
 						<address>Aldenham Rd, WD23 2TD, London</address>
 					</div>
-				</div>
+				</div> -->
+
+				<ul class="content">
+					{
+						events.slice(0, 4).map((event) => (
+							<>
+							{event.data.status == 'Upcoming' ? (
+								<li class="card">
+									<FormattedDate date={event.data.eventDate}/>
+	
+									<h3>{event.data.name}</h3>
+	
+									{event.data.address ? (
+										<address>{event.data.address}</address>
+									) : null}
+	
+									{event.data.externalLink ? (
+										<a href={event.data.externalLink} class="learn_more" target="_blank">Learn more</a>
+									): null}
+								</li>
+							) : null}
+							</>
+						))
+					}
+				</ul>
 
 				<a href="/events/">Check all events</a>
 			</section>
 		</div>
 
 		<section class="quote base_width">
-			<blockquote>
+			<blockquote class="reveal">
 				<p>
 					"<b>Sam provokes and disrupts, a wind-up merchant and a tail puller, a prodder 
 					and a poker.</b> When he meets someone’s ‘appropriate’ mask his first impulse is to want to dance with them to the edge of their ‘appropriate’ version of themselves and <b>see what illuminating fun can be had when the mask slips.</b>"
 				</p>
 			</blockquote>
 	
-			<p>Client excerpt from <b class="red">Insanely Gifted</b> by <b class="blue">Jamie Catto</b></p>
+			<p class="reveal">Client excerpt from <b class="red">Insanely Gifted</b> by <b class="blue">Jamie Catto</b></p>
 
 			<div class="squares">
 				<span></span>
@@ -90,7 +128,7 @@ import { RESUME_URL, FACEBOOK_URL, LINKEDIN_URL } from "../consts";
 		</section>
 
 		<section class="get_in_touch base_width">
-			<div class="content">
+			<div class="content reveal">
 				<h2>Friends, family, clients, and colleagues have instilled in me a habitual drive to lead and help others succeed.</h2>
 
 				<p>I generate ideas, transform them into actionable solutions, and collaborate with incredible minds at every organizational level. I've walked the path of risk, failure, and triumph, inspiring me to keep succeeding.</p>
@@ -114,18 +152,18 @@ import { RESUME_URL, FACEBOOK_URL, LINKEDIN_URL } from "../consts";
 		</section>
 		
 		<section class="text base_width">
-			<p>I'm proud to have collaborated with, invested in, led and trained <span class="blue">some of the most talented and amazing people from start-ups and charities to high-profile organisations and governments</span> to seize and conquer opportunities others didn't see or ever think possible in a manner that <span class="red">removes complexity to really get-shit-done.</span></p>
+			<p class="reveal">I'm proud to have collaborated with, invested in, led and trained <span class="blue">some of the most talented and amazing people from start-ups and charities to high-profile organisations and governments</span> to seize and conquer opportunities others didn't see or ever think possible in a manner that <span class="red">removes complexity to really get-shit-done.</span></p>
 
-			<p class="small">If I can help you, you can help me or you just want to see some cool origami and have a laugh.</p>
+			<p class="small reveal">If I can help you, you can help me or you just want to see some cool origami and have a laugh.</p>
 
-			<a class="cta">Dare to Disrupt? Let's Craft Change
+			<a class="cta reveal">Dare to Disrupt? Let's Craft Change
 				<span></span>
 				<span></span>
 				<span></span>
 				<span></span>
 			</a>
 
-			<a href={RESUME_URL} class="resume">Check my Resume</a>
+			<!-- <a href={RESUME_URL} class="resume">Check my Resume</a> -->
 		</section>
 	</main>
 </Layout>

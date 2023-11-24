@@ -8,7 +8,7 @@
 // import { Image } from "astro:assets"
 // import Logo from '../assets/logo/logo.png'
 
-import { RESUME_URL, EMAIL, TEL_HREF, TEL } from "../consts";
+import { RESUME_URL, EMAIL, TEL_HREF, TEL, FACEBOOK_URL, LINKEDIN_URL } from "../consts";
 
 import Facebook from "./svg/Facebook.astro";
 import LinkedIn from "./svg/LinkedIn.astro";
@@ -29,7 +29,7 @@ import LinkedIn from "./svg/LinkedIn.astro";
             <a href="/"><span></span>Home</a>
             <a href="/events/"><span></span>Events</a>
             <a href="/blog/"><span></span>Blog</a>
-            <a href={RESUME_URL}><span></span>Resume</a>
+            <!-- <a href={RESUME_URL}><span></span>Resume</a> -->
             <a href="/contact/"><span></span>Contact</a>
         </nav>
 
@@ -44,11 +44,11 @@ import LinkedIn from "./svg/LinkedIn.astro";
             <hr>
             
             <div class="social">
-                <a href="#" class="twitter icon" aria-label="Twitter link">
+                <a href={FACEBOOK_URL} class="twitter icon" aria-label="Twitter link" target="_blank">
                     <Facebook/>
                 </a>
 
-                <a href="#" class="linkedin icon" aria-label="LinkedIn link">
+                <a href={LINKEDIN_URL} class="linkedin icon" aria-label="LinkedIn link" target="_blank">
                     <LinkedIn/>
                 </a>
             </div>

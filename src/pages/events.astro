@@ -1,0 +1,79 @@
+---
+    import { getCollection } from 'astro:content';
+
+    import Layout from "../layouts/Layout.astro";
+
+    const events = (await getCollection('events')).sort(
+        (a, b) =>  a.data.eventDate.valueOf() - b.data.eventDate.valueOf()
+    );
+    
+    import "../styles/events.css"
+
+    import FormattedDate from '../components/FormattedDate.astro';
+---
+
+<Layout title="Events with Sam Patel">
+    <main>
+        <div class="base_width">
+            <h1 class="reveal">Events <span>with Sam</span></h1>
+    
+            <p class="subheading reveal">Upcoming</p>
+
+            <ul class="events upcoming">
+                {
+                    events.map((event) => (
+                        <>
+                        {event.data.status == 'Upcoming' ? (
+                            <li class="reveal">
+                                <FormattedDate date={event.data.eventDate} />
+
+                                <h2>{event.data.name}</h2>
+
+                                <p class="description">{event.data.description}</p>
+
+                                {event.data.address ? (
+                                    <address>{event.data.address}</address>
+                                ) : null}
+
+                                {event.data.externalLink ? (
+                                    <a href={event.data.externalLink} class="learn_more" target="_blank">Learn more</a>
+                                ): null}
+                            </li>
+                        ) : null}
+                        </>
+                    ))
+                }
+            </ul>
+
+            <hr>
+    
+            <p class="subheading reveal">Past Events</p>
+
+            <ul class="events past">
+                {
+                    events.map((event) => (
+                        <>
+                        {event.data.status == 'Past' ? (
+                            <li class="reveal">
+                                <FormattedDate date={event.data.eventDate} />
+
+                                <h2>{event.data.name}</h2>
+
+                                <p class="description">{event.data.description}</p>
+
+                                {event.data.address ? (
+                                    <address>{event.data.address}</address>
+                                ) : null}
+
+                                {event.data.externalLink ? (
+                                    <a href={event.data.externalLink} class="learn_more" target="_blank">Learn more</a>
+                                ): null}
+                            </li>
+                        ) : null}
+                        </>
+                    ))
+                }
+            </ul>
+        </div>
+    </main>
+</Layout>

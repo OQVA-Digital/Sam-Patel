@@ -11,6 +11,7 @@ html.sr .reveal, html.sr .reveal_steps1,  html.sr .reveal_steps2 {
     --dark-a:#123925;
 
     --primary:#334ff5;
+    --primary-l1:#8f9fff;
 
     --highlight:#f53347;
 
@@ -43,6 +44,10 @@ html.sr .reveal, html.sr .reveal_steps1,  html.sr .reveal_steps2 {
 .base_width {
     width: var(--width-1);
     margin-inline: auto;
+}
+
+.scroll_margin_top {
+    scroll-margin-top: calc(var(--header-height) + 4rem);
 }
 
 @font-face {

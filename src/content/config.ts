@@ -3,11 +3,7 @@ import { z, defineCollection } from 'astro:content';
 const blogCollection = defineCollection({
 	schema: z.object({
 		title: z.string(),
-		author: z.string(),
-		authorImage: z.string().optional(),
         standFirst: z.string().optional(),
-		tags: z.array(z.string()).optional(),
-        category: z.string(),
 		description: z.string(),
 		pubDate: z
 			.string()
@@ -18,16 +14,17 @@ const blogCollection = defineCollection({
 });
 
 const eventsCollection = defineCollection({
-    type: 'content', // v2.5.0 and later
+    type: 'content',
     schema: z.object({
-        order: z.number().optional(),
-        metaTitle: z.string().optional(),
-        metaDescription: z.string().optional(),
-        metaKeywords: z.string().optional(),
-        title: z.string(),
-        description: z.string().optional(),
-        type: z.string(),
-        image: z.string().optional(),
+        status: z.string(),
+		name: z.string(),
+		description: z.string().optional(),
+		address: z.string().optional(),
+        externalLink: z.string().optional(),
+		eventDate: z
+			.string()
+			.or(z.date())
+			.transform((val) => new Date(val)),
     }),
 });
 

@@ -5,4 +5,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     site: 'https://stargazers.club',
     integrations: [sitemap()],
+    redirects: {
+      '/blog': '/blog/1'
+    },
 });

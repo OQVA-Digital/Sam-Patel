@@ -24,7 +24,6 @@ import "../../styles/blog/blog.css"
 import "../../styles/blog/post.css"
 
 import { Schema } from "astro-seo-schema"
-import EndingBlogNav from "../../components/EndingBlogNav.astro";
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) =>  b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -33,64 +32,38 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <Layout {...post.data} title={post.data.title}>
-    <section class="intro">
-        <BackBt url={`/blog/#${(post.data.title).toLowerCase().replace(/\s+/g, '-')}`} label="Return"/>
+    <BackBt url={`/blog/#${(post.data.title).toLowerCase().replace(/\s+/g, '-')}`} label="Return"/>
 
-        <div class="cover">
-			<img src={post.data.heroImage} alt={post.data.description} loading="lazy" draggable="false" class="reveal_delay"/>
-		</div>
-
-        <!-- <img src={post.data.image} alt={`Photo of ${post.data.title} cleaning service`}> -->
-
-        <!-- <hr> -->
-    
-    </section>
-
-    <div class="content_ctnr">
-        <article class="reveal">
-            <div class="over_heading">
-                <div class="author">{post.data.authorImage ? (<img src={post.data.authorImage} alt={`${post.data.author} profile picture`}/>) : "by"} <cite>{post.data.author}</cite></div>
-    
-                <hr/>
-
-				<FormattedDate date={post.data.pubDate} />
+    <main>
+        <section class="intro base_width">
+            <div class="cover">
+                <img src={post.data.heroImage} alt={post.data.description} loading="lazy" draggable="false" class="reveal_delay"/>
             </div>
+        </section>
     
-            <h1>{post.data.title}</h1>
+        <div class="content_ctnr">
+            <article class="reveal">
+                <FormattedDate date={post.data.pubDate} />
+        
+                <h1>{post.data.title}</h1>
     
-            {post.data.tags ? (
-                <ul class="tags">
-                    {post.data.tags.map(item => (
-                        <li>
-                            {item == "Bathroom" ? (
-                                <a href={`/services/bathrooms`} class="reveal_tag">{item}</a>
-                            ) : (
-                                <p class="reveal_tag">{item}</p>
-                            )}
-                        </li>
-                    ))}
-                </ul>
-            ) : null}
-
-            <div class="post_content">
-                {post.data.standFirst ? (
-                    <p class="standfirst">{post.data.standFirst}</p>
-
-                    <hr/>
-                ) : null}
-
-                <Content />
-            </div>
-        </article>
-
-        <div class="cta_ctnr">
-            <a href="/contact/" class="main cta" aria-label="Get a free quote for our cleaning services">Get a free quote</a>
+                <div class="post_content">
+                    {post.data.standFirst ? (
+                        <p class="standfirst">{post.data.standFirst}</p>
+    
+                        <hr/>
+                    ) : null}
+    
+                    <Content />
+                </div>
+            </article>
         </div>
-    </div>
-
-    <!-- <EndingBlogNav category={post.data.category}/> -->
-
-    <ContactSection />
+    </main>
+    
+    <section class="contact_ctnr">
+        <h2>Get in touch</h2>
+        <ContactSection />
+    </section>
 
     <Schema
         item={{

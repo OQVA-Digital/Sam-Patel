@@ -1,0 +1,42 @@
+---
+    import Layout from "../layouts/Layout.astro";
+    import ContactForm from "../components/ContactForm.astro";
+---
+
+<Layout title="Get in Touch | Sam Patel">
+    <main>
+        <div class="base_width reveal">
+            <h1>Get in touch</h1>
+
+            <p>If I can help you, you can help me or you just want to see some cool origami and have a laugh.</p>
+
+            <ContactForm/>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    main {
+        background-color: var(--light-a);
+        padding-block: 6rem;
+    }
+
+    h1 {
+        text-align: center;
+        width: inherit;
+        font-size: clamp(3rem,8vw,5rem);
+        font-weight: 750;
+        color: var(--primary);
+    }
+
+    h1 + p {
+        text-align: center;
+        font-size: clamp(1rem,4.2vw,1.8rem);
+        margin-bottom: 3rem;
+        line-height: 1.6;
+        max-width: 47rem;
+        margin-inline: auto;
+        font-weight: 500;
+        color: var(--grey);
+    }
+</style>
