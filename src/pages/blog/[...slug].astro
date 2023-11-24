@@ -35,11 +35,12 @@ const posts = (await getCollection('blog')).sort(
     <BackBt url={`/blog/#${(post.data.title).toLowerCase().replace(/\s+/g, '-')}`} label="Return"/>
 
     <main>
-        <section class="intro base_width">
-            <div class="cover">
+
+        {post.data.heroImage ? (
+            <div class="hero_img">
                 <img src={post.data.heroImage} alt={post.data.description} loading="lazy" draggable="false" class="reveal_delay"/>
             </div>
-        </section>
+        ) : null}
     
         <div class="content_ctnr">
             <article class="reveal">

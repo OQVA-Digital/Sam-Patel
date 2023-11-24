@@ -48,9 +48,11 @@ import "../../styles/blog/blog-collection.css"
 						<>
 						<li id={(post.data.title).toLowerCase().replace(/\s+/g, '-')} class="scroll_margin_top reveal">
 							<div class="ctnr">
-								<a class="hero" href={`/blog/${post.slug}/`}>
-									<img src={post.data.heroImage} alt={post.data.description} loading="lazy"/>
-								</a>
+								{post.data.heroImage ? (
+									<a class="hero" href={`/blog/${post.slug}/`}>
+										<img src={post.data.heroImage} alt={post.data.description} loading="lazy"/>
+									</a>
+								) : null}
 
 								<div class="content">
 									<div class="ctnr">

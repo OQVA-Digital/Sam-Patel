@@ -139,6 +139,7 @@ h1 .page {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex: 1;
     min-width: clamp(20rem, 40vw, 70rem);
     padding: clamp(2rem, 5vw, 4rem) clamp(2rem, 5vw, 4rem);
     background-color: var(--light-b);
