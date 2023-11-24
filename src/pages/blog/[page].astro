@@ -32,8 +32,6 @@ import BackBt from '../../components/BackBt.astro';
 
 import "../../styles/blog/blog.css"
 import "../../styles/blog/blog-collection.css"
-
-import { Schema } from "astro-seo-schema"
 ---
 
 <Layout title={`Sam Patel Blog | Page ${page.currentPage}`}>
@@ -87,21 +85,4 @@ import { Schema } from "astro-seo-schema"
 			</div>
 		</section>
 	</main>
-
-    <Schema
-        item={{
-			"@context": "https://schema.org",
-			"@type": "Blog",
-			"@id": "sam-patel-blog",
-			"description": "Samit Patel, London's trusted partner in professional commercial and office cleaning. Reliable, high standards, tailored to your needs. See why 95% of our clients stay.",
-			"name": "Samit Patel Blog"
-		  }}
-    />
 </Layout>
-
-
-<style>
-	.posts {
-		margin-bottom: 5rem;
-	}
-</style>
