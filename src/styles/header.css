@@ -120,7 +120,11 @@ header .cta::after {
 }
 
 .hambt.close span:nth-child(1) {
-    transform: translateY(250%) rotate(45deg);
+    transform: translateY(290%) rotate(45deg);
+    -webkit-transform: translateY(290%) rotate(45deg);
+    -moz-transform: translateY(290%) rotate(45deg);
+    -ms-transform: translateY(290%) rotate(45deg);
+    -o-transform: translateY(290%) rotate(45deg);
 }
 
 .hambt.close span:nth-child(2) {
