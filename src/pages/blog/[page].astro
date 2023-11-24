@@ -16,6 +16,18 @@ export async function getStaticPaths({ paginate }) {
 
 const { page } = Astro.props;
 
+interface Props {
+  page?: {
+    url?: {
+      next?: string;
+      prev?: string;
+    };
+    data?: any;
+    lastPage?: number;
+    currentPage?: number;
+  };
+}
+
 import BackBt from '../../components/BackBt.astro';
 
 import "../../styles/blog/blog.css"
