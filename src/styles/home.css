@@ -48,7 +48,7 @@ section.intro:after {
     display: flex;
     flex-direction: column;
     gap: clamp(1rem, 4vw, 2.5rem);
-    padding-block: 4rem 2rem;
+    padding-top: 4rem;
 }
 
 .intro h2 {
@@ -65,16 +65,15 @@ section.intro:after {
 
 .intro .cta_ctnr {
     display: flex;
-    flex-flow: row wrap;
-    align-items: center;
+    flex-direction: column;
     gap: clamp(1.3rem, 4vw, 2rem);
 }
 
 .intro .cta_ctnr .social {
     display: flex;
-    flex-direction: column;
-    gap: 1.3rem;
-    color: var(--primary-l1);
+    flex-direction: row;
+    gap: 1.4rem;
+    color: var(--primary);
 }
 
 .intro .cta_ctnr .social a {
@@ -83,8 +82,8 @@ section.intro:after {
 }
 
 .intro .cta_ctnr svg {
-    width: clamp(1.8rem, 3vw, 2rem);
-    height: clamp(1.8rem, 3vw, 2rem);
+    width: clamp(1.8rem, 6vw, 2rem);
+    height: clamp(1.8rem, 6vw, 2rem);
     transition: color 0.4s ease;
     -webkit-transition: color 0.4s ease;
     -moz-transition: color 0.4s ease;
@@ -93,7 +92,7 @@ section.intro:after {
 }
 
 .intro .social a:hover svg {
-    color: var(--primary);
+    color: var(--primary-l1);
     transition: color 0.1s ease;
     -webkit-transition: color 0.1s ease;
     -moz-transition: color 0.1s ease;
@@ -479,16 +478,13 @@ section.text .cta {
         align-items: center;
     }
 
-    .intro .cta_ctnr .social {
-        flex-direction: row;
-    }
-
     .intro h1 {
         font-size: clamp(1rem, 2.3vw, 3.8rem);
     }
 
     .intro .base_width .content {
         gap: clamp(1rem, 1vw, 2.5rem);
+        padding-top: 0;
     }
 
     .intro h1 span {
@@ -525,5 +521,9 @@ section.text .cta {
 
     .get_in_touch {
         gap: clamp(5rem, calc(15vw - 15rem), 16rem);
+    }
+
+    .intro .cta_ctnr {
+        flex-direction: row;
     }
 }
