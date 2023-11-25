@@ -49,8 +49,8 @@ header nav {
     gap: clamp(1rem, 3vw, 3rem);
     background-color: var(--primary);
     padding-block: 4rem 0;
-    font-size: clamp(1.5rem, 6vw, 2rem);
-    font-weight: 400;
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    font-weight: 500;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s ease, visibility 0.2s ease;
@@ -58,6 +58,8 @@ header nav {
     -moz-transition: opacity 0.2s ease, visibility 0.2s ease;
     -ms-transition: opacity 0.2s ease, visibility 0.2s ease;
     -o-transition: opacity 0.2s ease, visibility 0.2s ease;
+    max-height: 60vh;
+    overflow-y: auto;
 }
 
 header nav.show {
@@ -150,6 +152,7 @@ header .cta::after {
     }
 
     header nav {
+        font-size: clamp(1.4rem, 1.5vw, 2rem);
         position: relative;
         opacity: 1;
         visibility: visible;
