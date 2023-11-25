@@ -28,8 +28,8 @@ import { Schema } from "astro-seo-schema"
 				{
 					posts.slice(0, 13).map((post) => (
 						<>
-						<li id={(post.data.title).toLowerCase().replace(/\s+/g, '-')} class="scroll_margin_top">
-							<div class="ctnr reveal">
+						<li id={(post.data.title).toLowerCase().replace(/\s+/g, '-')} class="scroll_margin_top reveal">
+							<div class="ctnr">
 								{post.data.heroImage ? (
 									<a class="hero" href={`/blog/${post.slug}/`}>
 										<img src={post.data.heroImage} alt={post.data.description} loading="lazy"/>

@@ -23,7 +23,7 @@ const { Content } = await post.render();
 import "../../styles/blog/blog.css"
 import "../../styles/blog/post.css"
 
-import { Schema } from "astro-seo-schema"
+// import { Schema } from "astro-seo-schema"
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) =>  b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -37,7 +37,7 @@ const posts = (await getCollection('blog')).sort(
     <main>
         {post.data.heroImage ? (
             <div class="hero_img">
-                <img src={post.data.heroImage} alt={post.data.description} loading="lazy" draggable="false" class="reveal_delay"/>
+                <img src={post.data.heroImage} alt={post.data.description} loading="lazy" draggable="false" class="reveal"/>
             </div>
         ) : null}
     
@@ -65,7 +65,7 @@ const posts = (await getCollection('blog')).sort(
         <ContactSection />
     </section>
 
-    <Schema
+    <!-- <Schema
         item={{
             "@context": "https://schema.org",
             "@type": "BlogPosting",
@@ -84,5 +84,5 @@ const posts = (await getCollection('blog')).sort(
                 }
             }
         }}
-    />
+    /> -->
 </Layout>

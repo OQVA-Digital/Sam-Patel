@@ -11,7 +11,7 @@ export async function getStaticPaths({ paginate }) {
 		(a, b) =>  b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 	);
 
-  	return paginate(posts, { pageSize: 6 })
+  	return paginate(posts, { pageSize: 5 })
 }
 
 interface Props {
@@ -40,7 +40,7 @@ import "../../styles/blog/blog-collection.css"
 	<main>
 		<section class="scroll_margin_top base_width" id="posts">
 
-			<h1 class="reveal"><sub>Sam's</sub>Blog <span class="page">Page {page.currentPage}</span></h1>
+			<h1 class="reveal"><sub>Sam's</sub>Blog <span class="page reveal_2">Page {page.currentPage}</span></h1>
 
 			<ul class="posts scroll_margin_top" id="posts">
 				{

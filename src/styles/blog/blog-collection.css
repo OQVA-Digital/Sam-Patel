@@ -207,17 +207,20 @@ h1 .page {
     font-size: clamp(1.6rem, 4vw, 1.7rem);
     padding: 1rem 0;
     background-color: var(--primary-e);
-    border: 0.1rem solid var(--primary-d);
+    border: 0.1rem solid;
     min-width: clamp(4rem, 17vw, 13rem);
     flex: 1;
     color: var(--light);
     font-weight: 400;
-    border: 0.1rem solid var(--c3-a);
     transition: border-color 0.2s ease;
     -webkit-transition: border-color 0.2s ease;
     -moz-transition: border-color 0.2s ease;
     -ms-transition: border-color 0.2s ease;
     -o-transition: border-color 0.2s ease;
+}
+
+.blog_nav a:not(.disabled) {
+    border-color: var(--primary-l2);
 }
 
 .blog_nav a:not(.disabled):hover {

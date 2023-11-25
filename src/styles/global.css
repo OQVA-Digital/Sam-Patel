@@ -1,4 +1,4 @@
-html.sr .reveal, html.sr .reveal_steps1,  html.sr .reveal_steps2 {
+html.sr .reveal, html.sr .reveal_2 {
     visibility: hidden;
 }
 
@@ -8,35 +8,23 @@ html.sr .reveal, html.sr .reveal_steps1,  html.sr .reveal_steps2 {
     --light-b:#f3f6ff;
 
     --dark:#222222;
-    --dark-a:#123925;
+    --dark-a:#121a39;
 
     --primary:#334ff5;
     --primary-l1:#8f9fff;
+    --primary-l2:#5472e4;
 
     --highlight:#f53347;
 
     --grey:#444444;
 
-    --c1: #9bba3c;
-    --c1-a:#b4dd36;
-
-    --c2:#ece634;
-
-    --c3:#4157aa;
-    --c3-a:#5472e4;
-
-    --c4:#007940;
-
     --max-width: 135rem;
 
     --width-1:clamp(15rem, 81vw, var(--max-width));
-    --width-2:clamp(15rem, 88vw, var(--max-width));
 
     --corner-width: calc((100vw - var(--width-1)) / 2);
 
     --header-height:clamp(1rem,17vmin,8rem);
-
-    --roulette-size:clamp(25rem, 25vw, 30rem);
 
     --testimonial-width:clamp(15rem, 75vw, 100rem);
 }

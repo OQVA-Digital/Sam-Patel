@@ -1,5 +1,5 @@
 section.intro {
-    background-color: var(--light-a);
+    background-color: var(--light-b);
     margin-bottom: clamp(4rem, 6vw, 9rem);
     width: calc(var(--width-1) + calc((100% - var(--width-1)) / 2));
     color: var(--dark);

@@ -66,10 +66,9 @@ form button[type='submit'] {
     font-size: 2.2rem;
     background-color: var(--primary);
     color: var(--light);
-    padding: 1.3rem clamp(2rem, 6vw, 3rem);
+    padding: 1.3rem clamp(2rem, 6vw, 6rem);
     cursor: pointer;
     font-weight: 500;
-    border: 0.2rem solid var(--c2-b);
     border-bottom-width: 0.7rem;
     position: relative;
     transition: background-color 0.4s ease, color 0.4s ease;
@@ -79,7 +78,6 @@ form button[type='submit'] {
 }
 
 form button[type='submit'].disabled {
-    background-color: var(--c2-e);
     font-weight: 500;
     pointer-events: none;
 }
