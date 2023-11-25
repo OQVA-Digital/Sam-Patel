@@ -22,39 +22,38 @@ section.intro:after {
     margin-inline: auto 0;
     display: flex;
     flex-flow: column;
-    gap: clamp(1rem, 4vw, 7rem);
 }
 
 .intro .sam_patel {
-    width: clamp(10rem, 70vw, 40rem);
+    width: clamp(10rem, 62vw, 40rem);
 }
 
 .intro h1 {
-    font-size: clamp(1rem, 5.1vw, 3.6rem);
-    font-weight: 800;
+    font-size: clamp(1rem, 5.2vw, 3.6rem);
+    font-weight: 750;
     line-height: 1.4;
     max-width: 56rem;
 }
 
 .intro h1 span {
-    font-size: 2em;
+    font-size: 2.2em;
     line-height: 1.1;
     display: inline-block;
-    max-width: clamp(1rem, 70vw, 110rem);
+    max-width: clamp(1rem, 85vw, 110rem);
     color: var(--primary);
 }
 
 .intro .base_width .content {
     display: flex;
     flex-direction: column;
-    gap: clamp(1rem, 4vw, 2.5rem);
+    gap: clamp(1rem, 3vw, 2.5rem);
     padding-top: 4rem;
 }
 
 .intro h2 {
     font-weight: 450;
-    font-size: clamp(1rem, 4.5vw, 2.2rem);
-    max-width: 90%;
+    font-size: clamp(1rem, 4.2vw, 2.2rem);
+    max-width: 83%;
     line-height: 1.6;
 }
 
@@ -476,6 +475,7 @@ section.text .cta {
     .intro > .base_width {
         flex-direction: row-reverse;
         align-items: center;
+        gap: clamp(1rem, 4vw, 7rem);
     }
 
     .intro h1 {
@@ -497,7 +497,7 @@ section.text .cta {
 
     .intro .sam_patel {
         width: clamp(10rem, 27vw, 70rem);
-        margin-top: 7rem;
+        margin-top: 9rem;
     }
 
     .flex_sections {
