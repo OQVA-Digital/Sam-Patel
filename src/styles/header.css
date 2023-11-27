@@ -11,7 +11,7 @@ header {
     z-index: 3;
 }
 
-header .base_width {
+header .width1 {
     display: flex;
     align-items: center;
     justify-content: space-between;

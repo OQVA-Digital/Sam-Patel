@@ -17,7 +17,7 @@ section.intro:after {
     border-bottom: 0.8rem solid var(--highlight);
 }
 
-.intro > .base_width {
+.intro > .width1 {
     width: var(--width-1);
     margin-inline: auto 0;
     display: flex;
@@ -43,7 +43,7 @@ section.intro:after {
     color: var(--primary);
 }
 
-.intro .base_width .content {
+.intro .width1 .content {
     display: flex;
     flex-direction: column;
     gap: clamp(1rem, 3vw, 2.5rem);
@@ -118,7 +118,7 @@ section.intro:after {
 .flex_sections {
     display: flex;
     flex-flow: row wrap;
-    gap: clamp(1rem, 14vw, 6rem);
+    gap: clamp(1rem, 21vw, 9rem);
     margin-bottom: clamp(4rem, 6vw, 9rem);
 }
 
@@ -349,6 +349,12 @@ section.get_in_touch {
     padding: clamp(1rem, 5vw, 6rem);
     box-sizing: border-box;
     position: relative;
+    padding: clamp(1rem, 9vw, 6rem) clamp(1rem, 5vw, 6rem);
+    color:var(--light);
+    margin-bottom: clamp(5rem, 50vw, 19rem);
+    display: flex;
+    flex-flow: row wrap;
+    gap: clamp(2rem, 8vw, 6rem);
 }
 
 section.get_in_touch::before {
@@ -361,17 +367,9 @@ section.get_in_touch::before {
     background-color: var(--highlight);
 }
 
-.get_in_touch {
-    color:var(--light);
-    margin-bottom: clamp(5rem, 50vw, 16rem);
-    display: flex;
-    flex-flow: row wrap;
-    gap: clamp(2rem, 8vw, 6rem);
-}
-
 .get_in_touch .content {
     flex: 1;
-    min-width: clamp(10rem, 30vw, 55rem);
+    min-width: clamp(10rem, 50vw, 55rem);
     max-width: 81vw;
     display: flex;
     flex-direction: column;
@@ -399,6 +397,8 @@ section.get_in_touch::before {
     flex: 1;
     min-width: clamp(10rem, 40vw, 45rem);
     margin-bottom: -12rem;
+    max-width: var(--width-1);
+    margin-inline: auto;
 }
 
 .get_in_touch .contact > .flex {
@@ -432,7 +432,7 @@ section.text {
     text-align: center;
     font-size: clamp(1rem, 4.4vw, 2.4rem);
     line-height: 1.8;
-    margin-bottom: clamp(8rem, 10vw, 14rem);
+    margin-bottom: clamp(8rem, 10vw, 18rem);
 }
 
 section.text p {
@@ -472,7 +472,7 @@ section.text .cta {
 
 
 @media screen and (min-width:1000px) {
-    .intro > .base_width {
+    .intro > .width1 {
         flex-direction: row-reverse;
         align-items: center;
         gap: clamp(1rem, 4vw, 7rem);
@@ -482,7 +482,7 @@ section.text .cta {
         font-size: clamp(1rem, 2.3vw, 3.8rem);
     }
 
-    .intro .base_width .content {
+    .intro .width1 .content {
         gap: clamp(1rem, 1vw, 2.5rem);
         padding-top: 0;
     }

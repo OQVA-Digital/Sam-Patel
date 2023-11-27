@@ -21,6 +21,7 @@ html.sr .reveal, html.sr .reveal_2 {
     --max-width: 135rem;
 
     --width-1:clamp(15rem, 81vw, var(--max-width));
+    --width-2:clamp(15rem, 95vw, var(--max-width));
 
     --corner-width: calc((100vw - var(--width-1)) / 2);
 
@@ -29,8 +30,13 @@ html.sr .reveal, html.sr .reveal_2 {
     --testimonial-width:clamp(15rem, 75vw, 100rem);
 }
 
-.base_width {
+.width1 {
     width: var(--width-1);
+    margin-inline: auto;
+}
+
+.width2 {
+    width: var(--width-2);
     margin-inline: auto;
 }
 

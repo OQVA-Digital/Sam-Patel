@@ -9,7 +9,7 @@
     color: var(--light-a);
 }
 
-.strip>.base_width {
+.strip>.width1 {
     display: flex;
     justify-content: space-between;
     align-items: stretch;

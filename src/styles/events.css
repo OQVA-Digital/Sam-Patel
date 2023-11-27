@@ -62,7 +62,7 @@ h1 span {
     color: var(--grey);
 }
 
-.base_width > hr {
+.width1 > hr {
     margin-block: 8rem 6rem;
     width: 100%;
     height: 0.2rem;
