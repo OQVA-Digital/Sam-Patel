@@ -22,8 +22,10 @@ html.sr .reveal, html.sr .reveal_2 {
 
     --width-1:clamp(15rem, 81vw, var(--max-width));
     --width-2:clamp(15rem, 95vw, var(--max-width));
+    --width-3:clamp(15rem, 81vw, 160rem);
 
     --corner-width: calc((100vw - var(--width-1)) / 2);
+    --limited-corner: clamp(-30rem, calc(var(--corner-width) * -1), 80rem);
 
     --header-height:clamp(1rem,17vmin,8rem);
 
@@ -37,6 +39,11 @@ html.sr .reveal, html.sr .reveal_2 {
 
 .width2 {
     width: var(--width-2);
+    margin-inline: auto;
+}
+
+.width3 {
+    width: var(--width-3);
     margin-inline: auto;
 }
 
@@ -204,14 +211,14 @@ noscript {
     font-size: clamp(1.5rem, 3.8vw, 1.6rem);
     text-align: center;
     width: fit-content;
-    padding: clamp(0.7rem, 3vw, 1.6rem) clamp(1.6rem, 5vw, 3.6rem);
+    padding: clamp(0.7rem, 3vw, 1.6rem) clamp(1.6rem, 3vw, 3.3rem);
     line-height: 1;
     position: relative;
 }
 
 .cta span {
-    width: 0.8rem;
-    height: 0.8rem;
+    width: 0.7rem;
+    height: 0.7rem;
     background-color: var(--highlight);
     position: absolute;
     transition: transform 0.1s ease;
@@ -229,6 +236,7 @@ noscript {
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
+    transition-delay: 0.1s;
 }
 
 .cta span:nth-of-type(2) {
@@ -239,6 +247,7 @@ noscript {
     -moz-transform: translate(50%, -50%);
     -ms-transform: translate(50%, -50%);
     -o-transform: translate(50%, -50%);
+    transition-delay: 0.2s;
 }
 
 .cta span:nth-of-type(3) {
@@ -249,6 +258,7 @@ noscript {
     -moz-transform: translate(50%, 50%);
     -ms-transform: translate(50%, 50%);
     -o-transform: translate(50%, 50%);
+    transition-delay: 0.3s;
 }
 
 .cta span:nth-of-type(4) {
@@ -259,6 +269,7 @@ noscript {
     -moz-transform: translate(-50%, 50%);
     -ms-transform: translate(-50%, 50%);
     -o-transform: translate(-50%, 50%);
+    transition-delay: 0.4s;
 }
 
 .cta:hover span {
@@ -267,6 +278,7 @@ noscript {
     -moz-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
+    transition-delay: 0s;
 }
 
 .main.cta {

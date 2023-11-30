@@ -10,6 +10,8 @@ import ContactForm from '../components/ContactForm.astro'
 
 import LinkedIn from '../components/svg/LinkedIn.astro'
 import Facebook from '../components/svg/Facebook.astro'
+import TinySquares from '../components/svg/TinySquares.astro'
+import TinySquaresColor from '../components/svg/TinySquaresColor.astro';
 
 import { RESUME_URL, FACEBOOK_URL, LINKEDIN_URL } from "../consts";
 
@@ -48,6 +50,10 @@ import FormattedDate from '../components/FormattedDate.astro';
 				</div>
 
 				<Image src={SamPatel} class="sam_patel reveal" alt="Photo of Samit Patel" draggable="false" loading="eager"/>
+
+				<div class="tiny_squares_ctnr reveal_3">
+					<TinySquaresColor/>
+				</div>
 			</div>
 		</section>
 
@@ -128,6 +134,10 @@ import FormattedDate from '../components/FormattedDate.astro';
 		</section>
 
 		<section class="get_in_touch width2">
+			<div class="tiny_squares_ctnr width1">
+				<TinySquares/>
+			</div>
+
 			<div class="content reveal width1">
 				<h2>Friends, family, clients, and colleagues have instilled in me a habitual drive to lead and help others succeed.</h2>
 

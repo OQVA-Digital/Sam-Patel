@@ -22,10 +22,28 @@ section.intro:after {
     margin-inline: auto 0;
     display: flex;
     flex-flow: column;
+    position: relative;
 }
 
 .intro .sam_patel {
-    width: clamp(10rem, 62vmin, 40rem);
+    width: clamp(10rem, 73vmin, 40rem);
+    height: clamp(10rem, 73vmin, 40rem);
+    position: relative;
+    z-index: 1;
+}
+
+.intro .tiny_squares_ctnr {
+    position: absolute;
+    left:0;
+    right:0;
+    bottom: 0;
+}
+
+.intro .tiny_squares {
+    position: absolute;
+    bottom: 0;
+    left: calc(var(--corner-width) * -1 + clamp(0.1rem, 2vw, 2.6rem));
+    width: clamp(10rem, 67vmin, 42rem);
 }
 
 .intro h1 {
@@ -53,7 +71,7 @@ section.intro:after {
 .intro h2 {
     font-weight: 450;
     font-size: clamp(1rem, 4.2vw, 2.2rem);
-    max-width: 83%;
+    max-width: 91%;
     line-height: 1.5;
 }
 
@@ -65,7 +83,7 @@ section.intro:after {
 .intro .cta_ctnr {
     display: flex;
     flex-direction: column;
-    gap: clamp(1.3rem, 4vw, 2rem);
+    gap: clamp(1.3rem, 4vw, 2.8rem);
 }
 
 .intro .cta_ctnr .social {
@@ -109,6 +127,8 @@ section.intro:after {
     box-sizing: border-box;
     line-height: 1.3;
     max-width: 80%;
+    box-shadow: 0 2rem 2rem -1rem var(--light-a);
+    border: 0.1rem solid var(--light-a);
 }
 
 .intro .cta b {
@@ -303,12 +323,11 @@ section.quote .squares {
     -o-transition: transform 0.06s 0.1s ease;
 }
 
-section.quote:hover .squares {
-    transform: scale(1.03);
-    -webkit-transform: scale(1.03);
-    -moz-transform: scale(1.03);
-    -ms-transform: scale(1.03);
-    -o-transform: scale(1.03);
+section.quote .squares span {
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--highlight);
+    position: absolute;
     transition: transform 0.06s ease;
     -webkit-transition: transform 0.06s ease;
     -moz-transition: transform 0.06s ease;
@@ -316,31 +335,57 @@ section.quote:hover .squares {
     -o-transition: transform 0.06s ease;
 }
 
-section.quote .squares span {
-    width: 1rem;
-    height: 1rem;
-    background-color: var(--highlight);
-    position: absolute;
-}
-
 section.quote .squares span:nth-of-type(1) {
     left: 0;
     top: 0;
+    transform: translate(150%, 150%);
+    -webkit-transform: translate(150%, 150%);
+    -moz-transform: translate(150%, 150%);
+    -ms-transform: translate(150%, 150%);
+    -o-transform: translate(150%, 150%);
+    transition-delay: 0.1s;
 }
 
 section.quote .squares span:nth-of-type(2) {
     right: 0;
     top: 0;
+    transform: translate(-150%, 150%);
+    -webkit-transform: translate(-150%, 150%);
+    -moz-transform: translate(-150%, 150%);
+    -ms-transform: translate(-150%, 150%);
+    -o-transform: translate(-150%, 150%);
+    transition-delay: 0.2s;
 }
 
 section.quote .squares span:nth-of-type(3) {
     right: 0;
     bottom: 0;
+    transform: translate(-150%, -150%);
+    -webkit-transform: translate(-150%, -150%);
+    -moz-transform: translate(-150%, -150%);
+    -ms-transform: translate(-150%, -150%);
+    -o-transform: translate(-150%, -150%);
+    transition-delay: 0.3s;
 }
 
 section.quote .squares span:nth-of-type(4) {
     left: 0;
     bottom: 0;
+    transform: translate(150%, -150%);
+    -webkit-transform: translate(150%, -150%);
+    -moz-transform: translate(150%, -150%);
+    -ms-transform: translate(150%, -150%);
+    -o-transform: translate(150%, -50%);
+    transition-delay: 0.4s;
+}
+
+section.quote:hover .squares span {
+    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transition-delay: 0s;
 }
 
 
@@ -355,6 +400,21 @@ section.get_in_touch {
     display: flex;
     flex-flow: row wrap;
     gap: clamp(2rem, 8vw, 6rem);
+}
+
+
+section.get_in_touch .tiny_squares_ctnr {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+section.get_in_touch .tiny_squares {
+    position: absolute;
+    top: calc(clamp(8rem, 10vw, 15rem) * -1);
+    right: calc(var(--corner-width) * -1);
+    width: clamp(10rem, 62vmin, 100rem);
+    z-index: -1;
 }
 
 section.get_in_touch::before {
@@ -457,7 +517,7 @@ section.text p span {
 }
 
 section.text .cta {
-    font-size: clamp(1.5rem, 3.8vw, 1.8rem);
+    font-size: clamp(1.5rem, 4.2vw, 1.8rem);
     background-color: var(--primary);
     color: var(--light);
     margin-block: 2rem 0;
@@ -478,6 +538,12 @@ section.text .cta {
         gap: clamp(1rem, 4vw, 7rem);
     }
 
+    .intro .tiny_squares, .intro .tiny_squares_ctnr {
+        width: clamp(10rem, 26vw, 75rem);
+        bottom: unset;
+        top: 0;
+    }
+
     .intro h1 {
         font-size: clamp(1rem, 2.3vw, 3.8rem);
     }
@@ -496,8 +562,9 @@ section.text .cta {
     }
 
     .intro .sam_patel {
-        width: clamp(10rem, 27vw, 70rem);
-        margin-top: 9rem;
+        width: clamp(10rem, 29vw, 55rem);
+        height: clamp(10rem, 29vw, 55rem);
+        margin-top: 5rem;
     }
 
     .flex_sections {
