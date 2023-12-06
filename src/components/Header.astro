@@ -60,17 +60,15 @@ import { RESUME_URL } from "../consts";
         }
     }
 
-    if(window.getComputedStyle(menuBt).display != "none") {
-        menuBt.addEventListener("click", toggleNav);
+    menuBt.addEventListener("click", toggleNav);
 
-        for (let i = 0; i < navBts.length; i++) {
-            navBts[i].addEventListener("click", toggleNav);
-        }
-
-        window.addEventListener("scroll", function (e) {
-            if (showingMenu == true) {
-                toggleNav();
-            }
-        });
+    for (let i = 0; i < navBts.length; i++) {
+        navBts[i].addEventListener("click", toggleNav);
     }
+
+    window.addEventListener("scroll", function (e) {
+        if (showingMenu == true) {
+            toggleNav();
+        }
+    });
 </script>

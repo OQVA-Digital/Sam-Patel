@@ -46,18 +46,18 @@ header nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(1rem, 3vw, 3rem);
+    gap: 1rem;
     background-color: var(--primary);
     padding-block: 4rem 0;
     font-size: clamp(1.5rem, 6vw, 2.2rem);
     font-weight: 500;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
-    -webkit-transition: opacity 0.2s ease, visibility 0.2s ease;
-    -moz-transition: opacity 0.2s ease, visibility 0.2s ease;
-    -ms-transition: opacity 0.2s ease, visibility 0.2s ease;
-    -o-transition: opacity 0.2s ease, visibility 0.2s ease;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+    -webkit-transition: opacity 0.15s ease, visibility 0.15s ease;
+    -moz-transition: opacity 0.15s ease, visibility 0.15s ease;
+    -ms-transition: opacity 0.15s ease, visibility 0.15s ease;
+    -o-transition: opacity 0.15s ease, visibility 0.15s ease;
     max-height: 60vh;
     overflow-y: auto;
 }
@@ -123,7 +123,11 @@ header .cta::after {
 .hambt span {
     height: 15%;
     background-color: var(--light-a);
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    -moz-transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    -ms-transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    -o-transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hambt.close {
@@ -153,6 +157,7 @@ header .cta::after {
 
     header nav {
         font-size: clamp(1.4rem, 1.5vw, 2rem);
+        gap: unset;
         position: relative;
         opacity: 1;
         visibility: visible;
@@ -168,7 +173,7 @@ header .cta::after {
     }
 
     header nav a {
-        padding-inline: 1.5rem;
+        padding-inline: clamp(1.5rem, 6vw, 5rem);
         margin-inline: unset;
         background-color: transparent;
         height: 100%;
