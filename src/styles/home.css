@@ -83,13 +83,13 @@ section.intro:after {
 .intro .cta_ctnr {
     display: flex;
     flex-direction: column;
-    gap: clamp(1.3rem, 4vw, 2.8rem);
+    gap: clamp(1.3rem, 5vw, 2.8rem);
 }
 
 .intro .cta_ctnr .social {
     display: flex;
     flex-direction: row;
-    gap: 1.4rem;
+    gap: clamp(1.4rem, 3vw, 1.6rem);
     color: var(--primary);
 }
 

@@ -16,8 +16,8 @@ export const OG_IMAGE = '/og/social-image.jpg'
 // TEL
 
 export const TEL = "+44 (0) 78520 72648"
-export const TEL_HREF = "4407852072648"
-export const TEL_INTERNATIONAL = ""
+export const TEL_HREF = "+4407852072648"
+export const TEL_INTERNATIONAL = "+44 78520 72648"
 export const EMAIL = "sam@samitpatel.org"
 
 
